@@ -1,0 +1,16 @@
+<!-- views/dashboard.erb -->
+<% erb :layout do %>
+  <h2>Welcome, <%= current_user.name %>!</h2>
+
+  <h3>My Dashboard</h3>
+
+  <% if @data.empty? %>
+    <p>No data available.</p>
+  <% else %>
+    <ul>
+      <% @data.each do |item| %>
+        <li><%= item %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
